@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Formulaire</title>
+</head>
+<body>
+<form>
+<label for="nom">Nom:</label>
+<input id="nom" type="text" />
+<br>
+<label for="prenom">Prénom:</label>
+<input id="prenom" type="text" />
+<br>
+<button type="button" id="afficher">Afficher</button>
+</form>
+<script src="formulaire.js">
+    document.getElementById('afficher').addEventListener('click', function() {
+const nom = document.getElementById('nom').value;
+const prenom = document.getElementById('prenom').value;
+alert(`Nom : ${nom}\nPrénom : ${prenom}`);
+});
+</script>
+</body>
+</html>

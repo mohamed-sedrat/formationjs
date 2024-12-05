@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+    <script>
+       
+        let score_ordi = 0;
+        let score_user = 0;
+        proposition = ['pierre', 'feuille', 'ciseaux'];
+        function getIndex(typed) {
+            if (typed == 'pierre') return 0;
+            if (typed == 'feuille') return 1;
+            if (typed == 'ciseaux') return 2;
+        }
+
+        function calculer(saisie, random, score_ordi, score_user) {
+            if (saisie == 0) { if (random == 1) { score_ordi++; } else if (random == 2) { score_user++; } }
+            if (saisie == 1) { if (random == 0) { score_ordi++; } else if (random == 2) { score_user++; } }
+            if (saisie == 2) { if (random == 1) { score_ordi++; } else if (random == 0) { score_user++; } }
+        }
+
+        for (var i = 0; i < 2; i++) {
+            
+             random = Math.round(Math.random() * 100) % 3;
+             saisie = prompt("choisir entre 'pierre', 'feuille','ciseaux' ");
+            saisie = getIndex(saisie);
+            alert(`ordi: ` + proposition[random] + `  user : ` + proposition[saisie]);
+            calculer(saisie, random, score_ordi, score_user)
+        }
+
+        if (score_ordi > score_user) { alert("Vous avez perdu"); }
+        else if (score_ordi < score_user) { alert("Vous avez gagner"); }
+        else alert("Vous etiez egale"); 
+    </script>
+</body>
+
+</html>

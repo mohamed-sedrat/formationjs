@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.bloc {
+          margin: 5px;
+          border: 1px solid #ccc;
+          float: left;
+          width: 180px;
+        }        div.bloc:hover {
+          border: 1px solid #777;
+        }        div.bloc img {
+          width: 100%;
+          height: auto;
+        }        </style>
+</head>
+<body>
+   <div id="bloc" class="bloc">    </div>
+    <script>
+        class Galerie {
+          // Définition du constructeur de la classe Galerie
+          constructor(conteneur) {
+            this.conteneur = conteneur;
+            this.urlImages = [];
+          }          // Cette méthode permet d'ajouter une image à cette galerie
+          ajouterImage(url) {
+            this.urlImages.push(url);
+          }          // Cette méthode permet de générer et d'afficher cette galerie dans la page
+          regenerer() {
+            var html = '';
+            // Génération des éléments <img> dans le conteneur
+            for (var i = 0; i < this.urlImages.length; i++) {
+              html = html + '<img src="' + this.urlImages[i] + '" class="hidden">';
+            }
+            // Correction ici : utilisation de l'affectation = au lieu de ==
+            this.conteneur.innerHTML = html;
+          }
+        }        var image = new Galerie(document.getElementById('bloc'));
+        image.ajouterImage('images/tunisia1.jpg');
+        image.ajouterImage('images/tunisia2.jpg');
+        image.ajouterImage('images/tunisia3.jpg');
+        image.regenerer();
+            </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register Participants</h1>
+    <h3>Name :</h3>
+    <input id="name">
+    <h3>Age :</h3>
+    <input id="age">
+    <h3>Email :</h3>
+    <input id="email">
+    <button id="add">Add Participants</button>
+    <h2>Participant List</h2>
+    <table id="tab">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        const add = document.getElementById('add');
+        const tab = document.getElementById('tab');
+
+        add.addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const email = document.getElementById('email').value;
+
+            const newRow = tab.insertRow();
+
+            const nameCell = newRow.insertCell (0);
+
+        }
+    ) 
+    </script>
+</body>
+</html>
